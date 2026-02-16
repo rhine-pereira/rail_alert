@@ -1,0 +1,207 @@
+{
+  "stations": [
+    {
+      "id": "VR",
+      "name": "Virar",
+      "lat": 19.4539,
+      "lng": 72.8106,
+      "line": "Western"
+    },
+    {
+      "id": "NSP",
+      "name": "Nalla Sopara",
+      "lat": 19.4182,
+      "lng": 72.8188,
+      "line": "Western"
+    },
+    {
+      "id": "BSR",
+      "name": "Vasai Road",
+      "lat": 19.3820,
+      "lng": 72.8319,
+      "line": "Western"
+    },
+    {
+      "id": "NIG",
+      "name": "Naigaon",
+      "lat": 19.3513,
+      "lng": 72.8465,
+      "line": "Western"
+    },
+    {
+      "id": "BYR",
+      "name": "Bhayandar",
+      "lat": 19.3114,
+      "lng": 72.8526,
+      "line": "Western"
+    },
+    {
+      "id": "MIRA",
+      "name": "Mira Road",
+      "lat": 19.2818,
+      "lng": 72.8553,
+      "line": "Western"
+    },
+    {
+      "id": "DIC",
+      "name": "Dahisar",
+      "lat": 19.2501,
+      "lng": 72.8593,
+      "line": "Western"
+    },
+    {
+      "id": "BVI",
+      "name": "Borivali",
+      "lat": 19.2294,
+      "lng": 72.8570,
+      "line": "Western"
+    },
+    {
+      "id": "KILE",
+      "name": "Kandivli",
+      "lat": 19.2045,
+      "lng": 72.8519,
+      "line": "Western"
+    },
+    {
+      "id": "MDD",
+      "name": "Malad",
+      "lat": 19.1870,
+      "lng": 72.8489,
+      "line": "Western"
+    },
+    {
+      "id": "GMN",
+      "name": "Goregaon",
+      "lat": 19.1644,
+      "lng": 72.8495,
+      "line": "Western"
+    },
+    {
+      "id": "RMAR",
+      "name": "Ram Mandir",
+      "lat": 19.1517,
+      "lng": 72.8483,
+      "line": "Western"
+    },
+    {
+      "id": "JOS",
+      "name": "Jogeshwari",
+      "lat": 19.1353,
+      "lng": 72.8485,
+      "line": "Western"
+    },
+    {
+      "id": "ADH",
+      "name": "Andheri",
+      "lat": 19.1192,
+      "lng": 72.8469,
+      "line": "Western"
+    },
+    {
+      "id": "VLP",
+      "name": "Vile Parle",
+      "lat": 19.1001,
+      "lng": 72.8443,
+      "line": "Western"
+    },
+    {
+      "id": "STC",
+      "name": "Santa Cruz",
+      "lat": 19.0827,
+      "lng": 72.8415,
+      "line": "Western"
+    },
+    {
+      "id": "KHAR",
+      "name": "Khar Road",
+      "lat": 19.0686,
+      "lng": 72.8400,
+      "line": "Western"
+    },
+    {
+      "id": "BA",
+      "name": "Bandra",
+      "lat": 19.0546,
+      "lng": 72.8406,
+      "line": "Western"
+    },
+    {
+      "id": "MM",
+      "name": "Mahim Junction",
+      "lat": 19.0405,
+      "lng": 72.8469,
+      "line": "Western"
+    },
+    {
+      "id": "MRU",
+      "name": "Matunga Road",
+      "lat": 19.0280,
+      "lng": 72.8469,
+      "line": "Western"
+    },
+    {
+      "id": "DDR",
+      "name": "Dadar",
+      "lat": 19.0180,
+      "lng": 72.8433,
+      "line": "Western"
+    },
+    {
+      "id": "PBHD",
+      "name": "Prabhadevi",
+      "lat": 19.0116,
+      "lng": 72.8385,
+      "line": "Western"
+    },
+    {
+      "id": "PL",
+      "name": "Lower Parel",
+      "lat": 18.9953,
+      "lng": 72.8300,
+      "line": "Western"
+    },
+    {
+      "id": "MX",
+      "name": "Mahalakshmi",
+      "lat": 18.9822,
+      "lng": 72.8242,
+      "line": "Western"
+    },
+    {
+      "id": "MMCT",
+      "name": "Mumbai Central",
+      "lat": 18.9698,
+      "lng": 72.8193,
+      "line": "Western"
+    },
+    {
+      "id": "GTR",
+      "name": "Grant Road",
+      "lat": 18.9634,
+      "lng": 72.8161,
+      "line": "Western"
+    },
+    {
+      "id": "CYR",
+      "name": "Charni Road",
+      "lat": 18.9515,
+      "lng": 72.8182,
+      "line": "Western"
+    },
+    {
+      "id": "MEL",
+      "name": "Marine Lines",
+      "lat": 18.9452,
+      "lng": 72.8236,
+      "line": "Western"
+    },
+    {
+      "id": "CCG",
+      "name": "Churchgate",
+      "lat": 18.9351,
+      "lng": 72.8272,
+      "line": "Western"
+    }
+  ]
+}
