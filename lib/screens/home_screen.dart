@@ -321,25 +321,93 @@ class _TrackingTab extends StatelessWidget {
                 if (state.distanceToStation != null) ...[
                   const SizedBox(height: 24),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 16),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Colors.blueAccent.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(16),
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.blueAccent.withOpacity(0.15),
+                          Colors.blueAccent.withOpacity(0.05),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: Colors.blueAccent.withOpacity(0.3),
+                        width: 1.5,
+                      ),
                     ),
                     child: Column(
                       children: [
-                        const Text('Distance to station',
-                            style: TextStyle(fontSize: 13)),
+                        // Distance
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(Icons.location_on,
+                                color: Colors.blueAccent, size: 20),
+                            const SizedBox(width: 8),
+                            Text(
+                              _formatDistance(state.distanceToStation!),
+                              style: const TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blueAccent,
+                              ),
+                            ),
+                          ],
+                        ),
                         const SizedBox(height: 4),
                         Text(
-                          _formatDistance(state.distanceToStation!),
-                          style: const TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueAccent,
+                          'Distance remaining',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey[600],
                           ),
                         ),
+
+                        // Speed and ETA
+                        if (state.currentSpeed > 0.5 &&
+                            state.estimatedTimeArrival != null) ...[
+                          const SizedBox(height: 16),
+                          const Divider(thickness: 1),
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              // Speed
+                              _InfoChip(
+                                icon: Icons.speed,
+                                label: 'Speed',
+                                value:
+                                    '${(state.currentSpeed * 3.6).toStringAsFixed(0)} km/h',
+                              ),
+                              // ETA
+                              _InfoChip(
+                                icon: Icons.access_time,
+                                label: 'ETA',
+                                value: _formatETA(state.estimatedTimeArrival!),
+                              ),
+                            ],
+                          ),
+                        ] else if (state.isTracking) ...[
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.info_outline,
+                                  size: 16, color: Colors.grey[600]),
+                              const SizedBox(width: 6),
+                              Text(
+                                'Move to see ETA',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey[600],
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ],
                     ),
                   ),
@@ -413,6 +481,66 @@ class _TrackingTab extends StatelessWidget {
       return '${(meters / 1000).toStringAsFixed(1)} km';
     }
     return '${meters.toInt()} m';
+  }
+
+  String _formatETA(double seconds) {
+    if (seconds.isInfinite || seconds.isNaN || seconds <= 0) {
+      return 'Calculating...';
+    }
+
+    final minutes = (seconds / 60).round();
+    if (minutes < 1) {
+      return '< 1 min';
+    } else if (minutes == 1) {
+      return '1 min';
+    } else if (minutes < 60) {
+      return '$minutes mins';
+    } else {
+      final hours = (minutes / 60).floor();
+      final remainingMins = minutes % 60;
+      if (remainingMins == 0) {
+        return '$hours hr';
+      }
+      return '$hours hr $remainingMins min';
+    }
+  }
+}
+
+class _InfoChip extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String value;
+
+  const _InfoChip({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(icon, color: Colors.blueAccent, size: 20),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 11,
+            color: Colors.grey[600],
+          ),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.blueAccent,
+          ),
+        ),
+      ],
+    );
   }
 }
 

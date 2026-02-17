@@ -8,6 +8,7 @@ import 'services/audio_service.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
 import 'services/permission_service.dart';
+import 'services/background_location_service.dart';
 import 'screens/permissions_screen.dart';
 import 'screens/home_screen.dart';
 
@@ -29,6 +30,7 @@ class RailAlertApp extends StatelessWidget {
         notificationService: NotificationService(),
         storageService: StorageService(),
         permissionService: PermissionService(),
+        backgroundLocationService: BackgroundLocationService(),
       )..initialize(),
       child: MaterialApp(
         title: 'Rail Alert',
